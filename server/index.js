@@ -22,8 +22,9 @@ app.get('/', (req, res) => {
   res.send("APP IS RUNNING");
 });
 
-const CONNECTION_URL = process.env.CONNECTION_URL;
-const PORT = process.env.PORT;
+// const CONNECTION_URL = process.env.CONNECTION_URL;
+const CONNECTION_URL = "mongodb+srv://raafay:raafay123@cluster0.8bav837.mongodb.net/test";
+const PORT = process.env.PORT || 5000;
 
 mongoose.connect(CONNECTION_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => app.listen(PORT, () => console.log(`Server Running on Port: http://localhost:${PORT}`)))
